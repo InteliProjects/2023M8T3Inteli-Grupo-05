@@ -1,0 +1,7 @@
+C:\Dev\projects\Inteli\m8\Grupo-05\Novo\src\app\workers\notifier\app\bin\Release\net8.0\publish\app.exe
+C:\Dev\projects\Inteli\m8\Grupo-05\Novo\src\app\workers\notifier\app\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Dev\projects\Inteli\m8\Grupo-05\Novo\src\app\workers\notifier\app\bin\Release\net8.0\publish\appsettings.json
+C:\Dev\projects\Inteli\m8\Grupo-05\Novo\src\app\workers\notifier\app\bin\Release\net8.0\publish\app.dll
+C:\Dev\projects\Inteli\m8\Grupo-05\Novo\src\app\workers\notifier\app\bin\Release\net8.0\publish\app.deps.json
+C:\Dev\projects\Inteli\m8\Grupo-05\Novo\src\app\workers\notifier\app\bin\Release\net8.0\publish\app.runtimeconfig.json
+C:\Dev\projects\Inteli\m8\Grupo-05\Novo\src\app\workers\notifier\app\bin\Release\net8.0\publish\app.pdb

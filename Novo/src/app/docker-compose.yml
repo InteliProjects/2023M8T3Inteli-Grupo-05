@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  
+  rabbitmq:
+    image: 'rabbitmq:3-management'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:15672"]
+            interval: 30s
+            timeout: 10s
+            retries: 5
+  worker-nlp-1:
+    build: workers/nlp
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./workers/nlp:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+  worker-nlp-2:
+    build: workers/nlp
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./workers/nlp:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+  worker-nlp-3:
+    build: workers/nlp
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./workers/nlp:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  # worker-notifier-1:
+  #   build: workers/notifier/app
+  #   restart: on-failure
+  #   depends_on:
+  #     - rabbitmq
+  #   volumes:
+  #     - ./workers/notifier:/app
+  #   ports:
+  #     - 5002:5002
+      
+  server:
+    build: server
+    volumes:
+      - ./server:/app
+    ports:
+      - 5000:5000
+
+  frontend:
+    build: verse
+    volumes:
+      - ./verse:/app
+      - /app/node_modules 
+    command: npm run dev
+    ports:
+      - "3000:3000"
